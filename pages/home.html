@@ -1,0 +1,136 @@
+<section id="home-content">
+  <section class="relative h-[75vh] overflow-hidden">
+    <div id="hero-carousel">
+      <!-- Slide 1 -->
+      <div class="carousel-item active relative h-[75vh]">
+        <img
+          src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=2000"
+          class="w-full h-full object-cover"
+        />
+
+        <div class="absolute inset-0 bg-black/40 flex items-center px-6">
+          <div class="max-w-7xl mx-auto w-full text-white">
+            <h2
+              class="text-5xl md:text-8xl font-black mb-6 serif-title leading-tight"
+              data-i18n="h1-t"
+            >
+              سيادة القانون.. أمان لمستقبلكم
+            </h2>
+            <p
+              class="text-xl md:text-2xl text-white/80 max-w-2xl mb-10 leading-relaxed"
+              data-i18n="h1-d"
+            >
+              نحن نوفر لعملائنا أفضل الاستشارات القانونية والتمثيل القضائي بخبرة
+              تزيد عن 25 عاماً في المحافل الدولية.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-item relative h-[75vh]">
+        <img
+          src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&q=80&w=2000"
+          class="w-full h-full object-cover"
+        />
+
+        <div class="absolute inset-0 bg-black/40 flex items-center px-6">
+          <div class="max-w-7xl mx-auto w-full text-white">
+            <h2
+              class="text-5xl md:text-8xl font-black mb-6 serif-title leading-tight"
+              data-i18n="h1-t"
+            >
+              سيادة القانون.. أمان لمستقبلكم
+            </h2>
+            <p
+              class="text-xl md:text-2xl text-white/80 max-w-2xl mb-10 leading-relaxed"
+              data-i18n="h1-d"
+            >
+              نحن نوفر لعملائنا أفضل الاستشارات القانونية والتمثيل القضائي بخبرة
+              تزيد عن 25 عاماً في المحافل الدولية.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Controls -->
+    <div class="absolute bottom-10 left-0 right-0 flex justify-center gap-4">
+      <button
+        onclick="moveCarousel(-1)"
+        class="w-12 h-12 rounded-full border border-white/20 text-white hover:bg-gold transition flex items-center justify-center"
+      >
+        <i class="fas fa-arrow-right rtl:rotate-180"></i>
+      </button>
+      <button
+        onclick="moveCarousel(1)"
+        class="w-12 h-12 rounded-full border border-white/20 text-white hover:bg-gold transition flex items-center justify-center"
+      >
+        <i class="fas fa-arrow-left rtl:rotate-180"></i>
+      </button>
+    </div>
+  </section>
+
+  <!-- Home Intro Section -->
+  <section class="py-24 px-6 max-w-7xl mx-auto">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <h4 class="text-gold font-bold uppercase tracking-widest mb-4">
+          Established 1995
+        </h4>
+        <h2
+          class="text-4xl md:text-5xl font-bold text-navy mb-8 serif-title"
+          data-i18n="a-title"
+        >
+          تاريخ من التميز والنزاهة
+        </h2>
+        <p
+          class="text-lg text-slate-600 leading-loose mb-6"
+          data-i18n="home-p1"
+        >
+          تأسس مكتب النخبة للمحاماة ليكون منارة للعدالة في المنطقة، حيث نجمع بين
+          الأصالة القانونية والحلول العصرية المبتكرة. عبر ربع قرن، نجحنا في
+          تمثيل مئات الشركات والأفراد في قضايا شكلت سوابق قضائية هامة.
+        </p>
+        <button
+          onclick="showPage('about')"
+          class="text-navy font-bold border-b-2 border-gold pb-1 hover:text-gold transition uppercase tracking-widest text-sm"
+          data-i18n="m-about"
+        >
+          اقرأ المزيد عن المكتب
+        </button>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <div
+          class="bg-white p-8 rounded-xl shadow-xl text-center border-b-4 border-gold"
+        >
+          <h3 class="text-3xl font-black text-navy mb-1">1.5k+</h3>
+          <p class="text-gold text-xs font-bold uppercase" data-i18n="st-1">
+            قضية ناجحة
+          </p>
+        </div>
+        <div
+          class="bg-white p-8 rounded-xl shadow-xl text-center border-b-4 border-gold"
+        >
+          <h3 class="text-3xl font-black text-navy mb-1">25+</h3>
+          <p class="text-gold text-xs font-bold uppercase" data-i18n="st-2">
+            سنة خبرة
+          </p>
+        </div>
+        <div
+          class="bg-white p-8 rounded-xl shadow-xl text-center border-b-4 border-gold"
+        >
+          <h3 class="text-3xl font-black text-navy mb-1">100%</h3>
+          <p class="text-gold text-xs font-bold uppercase" data-i18n="st-4">
+            سرية تامة
+          </p>
+        </div>
+        <div
+          class="bg-white p-8 rounded-xl shadow-xl text-center border-b-4 border-gold"
+        >
+          <h3 class="text-3xl font-black text-navy mb-1">30+</h3>
+          <p class="text-gold text-xs font-bold uppercase">مستشار خبير</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>

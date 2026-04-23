@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>مكتب النخبة للمحاماة</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-[#fdfcfb] text-slate-900">
+    <nav
+      class="fixed w-full z-[1000] py-4 bg-white border-b-2 border-[#b48c36] shadow-lg"
+    >
+      <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+        <div class="flex items-center gap-3">
+          <img src="./img/logo.png" alt="Logo" class="h-10 w-auto" />
+          <div class="leading-none">
+            <h1
+              class="text-[#0f172a] text-xl font-extrabold uppercase tracking-tight"
+              data-i18n="logo"
+            >
+              طاهر&هاني
+            </h1>
+            <p
+              class="text-gold text-[9px] uppercase tracking-[0.2em] font-bold mt-1"
+              data-i18n="logo-2"
+            >
+              المكتب القانوني
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="hidden lg:flex items-center gap-8 text-xs font-bold uppercase tracking-widest"
+        >
+          <button onclick="loadPage('home')" data-i18n="m-home">
+            الرئيسية
+          </button>
+          <button onclick="loadPage('areas')" data-i18n="m-Areas">
+            المجالات
+          </button>
+          <button onclick="loadPage('services')" data-i18n="m-services">
+            خدماتنا
+          </button>
+          <button onclick="loadPage('team')" data-i18n="m-team">الفريق</button>
+          <button onclick="loadPage('about')" data-i18n="m-about">
+            من نحن
+          </button>
+          <button onclick="loadPage('contact')" data-i18n="m-contact">
+            اتصل بنا
+          </button>
+          <button
+            onclick="toggleLanguage()"
+            id="lang-btn"
+            class="bg-[#b48c36] text-white px-4 py-1 rounded"
+          >
+            English
+          </button>
+        </div>
+
+        <button
+          onclick="toggleMobileMenu()"
+          class="lg:hidden text-gold text-2xl"
+        >
+          <i class="fas fa-bars-staggered"></i>
+        </button>
+      </div>
+
+      <div
+        id="mobile-menu"
+        class="hidden lg:hidden bg-white border-t border-gold/20 flex flex-col p-6 gap-4 shadow-2xl"
+      >
+        <button
+          onclick="
+            loadPage('home');
+            toggleMobileMenu();
+          "
+          class="text-start font-bold"
+          data-i18n="m-home"
+        >
+          الرئيسية
+        </button>
+        <button
+          onclick="
+            loadPage('areas');
+            toggleMobileMenu();
+          "
+          class="text-start font-bold"
+          data-i18n="m-Areas"
+        >
+          المجالات
+        </button>
+        <button
+          onclick="
+            loadPage('services');
+            toggleMobileMenu();
+          "
+          class="text-start font-bold"
+          data-i18n="m-services"
+        >
+          خدماتنا
+        </button>
+        <button
+          onclick="
+            loadPage('team');
+            toggleMobileMenu();
+          "
+          class="text-start font-bold"
+          data-i18n="m-team"
+        >
+          فريق العمل
+        </button>
+        <button
+          onclick="
+            loadPage('about');
+            toggleMobileMenu();
+          "
+          class="text-start font-bold"
+          data-i18n="m-about"
+        >
+          من نحن
+        </button>
+        <button
+          onclick="
+            loadPage('contact');
+            toggleMobileMenu();
+          "
+          class="text-start font-bold"
+          data-i18n="m-contact"
+        >
+          اتصل بنا
+        </button>
+
+        <button
+          onclick="
+            toggleLanguage();
+            toggleMobileMenu();
+          "
+          class="bg-gold text-white py-2 rounded mt-2"
+        >
+          English / العربية
+        </button>
+      </div>
+    </nav>
+
+    <main id="content-area" class="pt-20"></main>
+
+    <footer class="bg-[#0f172a] py-12 text-center text-slate-500 text-[10px]">
+      <p data-i18n="footer-copy">
+        &copy; 2024 ELITE LAW FIRM. ALL RIGHTS RESERVED.
+      </p>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>

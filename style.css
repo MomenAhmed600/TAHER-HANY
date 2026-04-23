@@ -1,0 +1,53 @@
+
+        :root {
+            --navy: #0f172a;
+            --gold: #b48c36;
+            --gold-light: #d4af37;
+            --cream: #fdfcfb;
+        }
+
+        [lang="ar"] { font-family: 'Tajawal', sans-serif; }
+        [lang="en"] { font-family: 'Inter', sans-serif; }
+        .serif-title { font-family: 'Amiri', serif; }
+        [lang="en"] .serif-title { font-family: 'Playfair Display', serif; }
+
+        .bg-navy { background-color: var(--navy); }
+        .text-gold { color: var(--gold); }
+        .bg-gold { background-color: var(--gold); }
+        
+        /* Navbar Navy & Gold Style */
+        #main-nav {
+            background-color: #fff;
+            border-bottom: 2px solid var(--gold);
+        }
+
+        /* Carousel */
+        .carousel-item { display: none; animation: slideEffect 1s ease; }
+        .carousel-item.active { display: block; }
+        @keyframes slideEffect { from { opacity: 0.5; } to { opacity: 1; } }
+
+        /* SPA Logic */
+        .page-content { display: none; }
+        .page-content.active { display: block; animation: fadeIn 0.6s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Accordion (As requested in image) */
+        .accordion-item { border-bottom: 1px solid #111; padding: 1.5rem 0; }
+        .accordion-header { cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .accordion-content { 
+            max-height: 0; 
+            overflow: hidden; 
+            transition: max-height 0.6s cubic-bezier(0, 1, 0, 1); 
+            color: #4b5563;
+            line-height: 1.8;
+            font-size: 1.125rem;
+        }
+        .accordion-item.active .accordion-content { max-height: 1000px; transition: max-height 1s ease-in; margin-top: 1rem; }
+        .accordion-item.active .chevron { transform: rotate(180deg); }
+
+        .gold-button {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+            color: var(--navy);
+            transition: all 0.3s ease;
+        }
+        .gold-button:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(180, 140, 54, 0.3); }
