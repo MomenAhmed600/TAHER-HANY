@@ -48,6 +48,20 @@ const translations = {
     "f-email": "البريد الإلكتروني",
     "f-msg": "تفاصيل الاستشارة",
     "footer-copy": "جميع الحقوق محفوظة لمكتب النخبة للمحاماة © 2024",
+    "area-criminal-t": "القانون الجنائي",
+    "area-click-more": "اضغط لمعرفة التفاصيل والتمثيل القانوني",
+    "area-maritime-t": "القانون البحري",
+    "area-maritime-d": "استشارات متخصصة في الشحن والتأمين البحري",
+    "area-corporate-t": "قانون الشركات",
+    "area-corporate-d": "دعم قانوني كامل للمستثمرين والشركات الدولية",
+    "read-more": "اقرأ المزيد",
+    "det-about-t": "عن التخصص",
+    "det-about-d": "نقدم في مكتبنا خدمات دفاع جنائي متميزة...",
+    "det-services-t": "تشمل خدماتنا",
+    "det-s1": "تمثيل الموكلين في قضايا الجنايات والجنح بمختلف أنواعها.",
+    "det-s2": "تقديم الاستشارات القانونية الوقائية لتجنب المساءلة.",
+    "det-side-t": "هل تحتاج لاستشارة؟",
+    "det-back": "لعودة لمجالات الممارسه",
   },
   en: {
     logo: "TAHER & HANY",
@@ -99,6 +113,22 @@ const translations = {
     "f-email": "Email Address",
     "f-msg": "Consultation Details",
     "footer-copy": "© 2024 ELITE LAW FIRM. ALL RIGHTS RESERVED.",
+    "area-criminal-t": "Criminal Law",
+    "area-click-more": "Click for details and legal representation",
+    "area-maritime-t": "Maritime Law",
+    "area-maritime-d":
+      "Specialized consultancy in shipping and marine insurance",
+    "area-corporate-t": "Corporate Law",
+    "area-corporate-d":
+      "Full legal support for investors and international firms",
+    "read-more": "Read More",
+    "det-about-t": "ABOUT PRACTICE",
+    "det-about-d": "We provide distinguished criminal defense services...",
+    "det-services-t": "OUR SERVICES INCLUDE",
+    "det-s1": "Representing clients in criminal and misdemeanor cases.",
+    "det-s2": "Providing preventive legal advice.",
+    "det-side-t": "Do you need a consultation",
+    "det-back": "Returning to the Areas of practice",
   },
 };
 let currentLang = "ar";
@@ -122,8 +152,19 @@ let currentLang = "ar";
 // دالة تحميل الصفحات ديناميكياً
 async function loadPage(pageName) {
   const contentArea = document.getElementById("content-area");
+
+  // نحدد المسار بناءً على اسم الصفحة
+  // لو الصفحة خاصة بالتفاصيل، هنروح للفولدر الجديد، لو لا، هنفضل في الفولدر العادي
+  let path = `pages/${pageName}.html`;
+
+  const detailPages = ["criminal-law", "maritime-law", "corporate-law"];
+
+  if (detailPages.includes(pageName)) {
+    path = `pages/areas-pages-details/${pageName}.html`;
+  }
+
   try {
-    const response = await fetch(`pages/${pageName}.html`);
+    const response = await fetch(path);
     if (!response.ok) throw new Error("Page not found");
     const html = await response.text();
     contentArea.innerHTML = html;
@@ -198,3 +239,23 @@ function toggleMobileMenu() {
     }
   }
 }
+
+window.toggleReadMore = function (btn) {
+  const card = btn.closest(".practice-card");
+  const details = card.querySelector(".card-details");
+  const header = card.querySelector(".card-header");
+  const icon = btn.querySelector("i");
+  const isExpanded = card.classList.toggle("expanded");
+
+  if (isExpanded) {
+    details.style.maxHeight = details.scrollHeight + "px";
+    details.style.opacity = "1";
+    header.style.transform = "translateY(-10px)"; // يرفع العنوان لفوق
+    icon.style.transform = "rotate(180deg)";
+  } else {
+    details.style.maxHeight = "0";
+    details.style.opacity = "0";
+    header.style.transform = "translateY(0)";
+    icon.style.transform = "rotate(0deg)";
+  }
+};

@@ -1,0 +1,136 @@
+<section class="relative h-[40vh] overflow-hidden">
+  <img
+    src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=2000"
+    class="w-full h-full object-cover"
+  />
+  <div class="absolute inset-0 bg-navy/70 flex items-center justify-center">
+    <div class="text-center text-white">
+      <h1
+        class="text-4xl md:text-6xl font-black mb-4 serif-title"
+        data-i18n="area-criminal-t"
+      >
+        القانون الجنائي
+      </h1>
+      <div class="w-20 h-1 bg-gold mx-auto"></div>
+    </div>
+  </div>
+</section>
+
+<section class="py-20 px-6 max-w-7xl mx-auto">
+  <div class="flex flex-col lg:flex-row gap-12 items-start">
+    <div class="w-full lg:w-1/2 order-1 lg:order-1 rtl:lg:order-2">
+      <div class="relative group">
+        <div
+          class="absolute -inset-4 border-2 border-gold/20 rounded-xl translate-x-4 translate-y-4 -z-10 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-500"
+        ></div>
+        <img
+          src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&q=80&w=1000"
+          class="w-full h-[300px] lg:h-[500px] object-cover rounded-xl shadow-2xl transition-all duration-500"
+        />
+      </div>
+    </div>
+
+    <div
+      class="w-full lg:w-1/2 flex flex-col gap-8 order-2 lg:order-2 rtl:lg:order-1"
+    >
+      <div
+        class="practice-card bg-white p-6 lg:p-10 rounded-xl shadow-sm border border-gold/10 relative overflow-hidden transition-all duration-500"
+      >
+        <div class="card-header transition-all duration-500">
+          <h2
+            class="text-2xl lg:text-3xl font-bold text-gold mb-4 uppercase tracking-tighter text-start"
+            data-i18n="det-about-t"
+          >
+            عن التخصص
+          </h2>
+        </div>
+
+        <div
+          class="card-details max-h-0 opacity-0 overflow-hidden transition-all duration-500"
+        >
+          <p
+            class="text-slate-600 leading-relaxed text-base lg:text-lg mb-6 text-start"
+            data-i18n="det-about-d"
+          >
+            نقدم في مكتبنا خدمات دفاع جنائي متميزة، حيث نؤمن بأن كل شخص يستحق
+            تمثيلاً قانونياً عادلاً وقوياً.
+          </p>
+          <h3
+            class="text-lg lg:text-xl font-bold text-navy mb-4 text-start"
+            data-i18n="det-services-t"
+          >
+            تشمل خدماتنا:
+          </h3>
+          <ul class="space-y-3 text-start mb-6 text-sm lg:text-base">
+            <li class="flex items-center gap-3">
+              <i class="fas fa-check text-gold text-xs"></i>
+              <span data-i18n="det-s1">تمثيل الموكلين في القضايا.</span>
+            </li>
+          </ul>
+          <ul class="space-y-3 text-start mb-6 text-sm lg:text-base">
+            <li class="flex items-center gap-3">
+              <i class="fas fa-check text-gold text-xs"></i>
+              <span data-i18n="det-s1">تمثيل الموكلين في القضايا.</span>
+            </li>
+          </ul>
+          <ul class="space-y-3 text-start mb-6 text-sm lg:text-base">
+            <li class="flex items-center gap-3">
+              <i class="fas fa-check text-gold text-xs"></i>
+              <span data-i18n="det-s1">تمثيل الموكلين في القضايا.</span>
+            </li>
+          </ul>
+          <ul class="space-y-3 text-start mb-6 text-sm lg:text-base">
+            <li class="flex items-center gap-3">
+              <i class="fas fa-check text-gold text-xs"></i>
+              <span data-i18n="det-s1">تمثيل الموكلين في القضايا.</span>
+            </li>
+          </ul>
+          <ul class="space-y-3 text-start mb-6 text-sm lg:text-base">
+            <li class="flex items-center gap-3">
+              <i class="fas fa-check text-gold text-xs"></i>
+              <span data-i18n="det-s1">تمثيل الموكلين في القضايا.</span>
+            </li>
+          </ul>
+          <ul class="space-y-3 text-start mb-6 text-sm lg:text-base">
+            <li class="flex items-center gap-3">
+              <i class="fas fa-check text-gold text-xs"></i>
+              <span data-i18n="det-s1">تمثيل الموكلين في القضايا.</span>
+            </li>
+          </ul>
+        </div>
+
+        <button
+          onclick="toggleReadMore(this)"
+          class="mt-4 flex items-center gap-2 text-navy font-black text-xs lg:text-sm uppercase tracking-widest border-b-2 border-gold pb-1 hover:text-gold transition-all"
+        >
+          <span class="btn-text" data-i18n="read-more">Read More</span>
+          <i
+            class="fas fa-arrow-down text-xs transition-transform duration-300"
+          ></i>
+        </button>
+      </div>
+
+      <div
+        class="bg-[#0f172a] p-6 lg:p-8 rounded-xl text-white text-start shadow-xl lg:max-w-md self-start w-full"
+      >
+        <h4 class="text-lg font-bold mb-4 text-start" data-i18n="det-side-t">
+          هل تحتاج لاستشارة؟
+        </h4>
+        <button
+          onclick="loadPage('contact')"
+          class="w-full bg-[#b48c36] text-[#0f172a] font-bold py-2 lg:py-3 rounded hover:bg-white transition uppercase text-xs lg:text-sm tracking-widest"
+          data-i18n="btn-consult"
+        >
+          احجز استشارة فورية
+        </button>
+        <button
+          onclick="loadPage('areas')"
+          class="w-full text-gold font-bold flex items-center justify-start gap-2 hover:underline py-4"
+        >
+          <span data-i18n="det-back">العودة لمجالات الممارسة</span>
+          <i class="fas fa-arrow-left rtl:rotate-0 ltr:rotate-180"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
