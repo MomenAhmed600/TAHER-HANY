@@ -1,22 +1,68 @@
-<section class="py-24 px-6 bg-[#f9f8f3]">
-  <div class="max-w-4xl mx-auto">
-    <h2
-      class="text-4xl font-bold text-[#0f172a] mb-16 serif-title border-b pb-8"
-      data-i18n="m-services"
-    >
-      خدماتنا
+<section class="py-24 px-6 bg-[#fdfcfb]">
+  <div class="max-w-7xl mx-auto text-center mb-16">
+    <h2 class="text-4xl font-bold text-navy mb-4 serif-title" data-i18n="s-title">
+      خدماتنا القانونية
     </h2>
-    <div class="accordion-item">
-      <div
-        class="accordion-header px-4 py-6 flex justify-between cursor-pointer"
-        onclick="toggleAccordion(this)"
-      >
-        <h3 class="text-2xl font-medium" data-i18n="s1-t">القانون البحري</h3>
-        <i class="fas fa-chevron-down"></i>
+    <div class="w-24 h-1 bg-gold mx-auto"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+    <div
+      onclick="loadPage('maritime-law')"
+      class="group relative h-[400px] overflow-hidden rounded-xl cursor-pointer shadow-2xl transition-transform duration-500 hover:-translate-y-2"
+    >
+      <img
+        src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&q=80&w=800"
+        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+        alt="Maritime Law"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-8 text-white text-start">
+        <i class="fas fa-ship text-3xl text-gold mb-4"></i>
+        <h3 class="text-2xl font-bold mb-2" data-i18n="s1-t">
+          القانون البحري والشحن
+        </h3>
+        <p class="text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300" data-i18n="area-click-more">
+          اضغط لمعرفة التفاصيل والتمثيل القانوني
+        </p>
       </div>
-      <div class="accordion-content px-4 pb-6">
-        <p data-i18n="s1-d">
-          تقديم كافة الاستشارات المتعلقة بالشحن والتأمين البحري.
+    </div>
+
+    <div
+      onclick="loadPage('corporate-law')"
+      class="group relative h-[400px] overflow-hidden rounded-xl cursor-pointer shadow-2xl transition-transform duration-500 hover:-translate-y-2"
+    >
+      <img
+        src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800"
+        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+        alt="Corporate Law"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-8 text-white text-start">
+        <i class="fas fa-briefcase text-3xl text-gold mb-4"></i>
+        <h3 class="text-2xl font-bold mb-2" data-i18n="s2-t">
+          قانون الشركات والتجارة الدولية
+        </h3>
+        <p class="text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300" data-i18n="area-click-more">
+          اضغط لمعرفة التفاصيل والتمثيل القانوني
+        </p>
+      </div>
+    </div>
+
+    <div
+      onclick="loadPage('criminal-law')"
+      class="group relative h-[400px] overflow-hidden rounded-xl cursor-pointer shadow-2xl transition-transform duration-500 hover:-translate-y-2"
+    >
+      <img
+        src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=800"
+        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+        alt="Customs"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-8 text-white text-start">
+        <i class="fas fa-file-invoice-dollar text-3xl text-gold mb-4"></i>
+        <h3 class="text-2xl font-bold mb-2" data-i18n="area-criminal-t">
+          القانون الجنائي
+        </h3>
+        <p class="text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300" data-i18n="area-click-more">
+          اضغط لمعرفة التفاصيل والتمثيل القانوني
         </p>
       </div>
     </div>

@@ -18,6 +18,7 @@ const translations = {
     "a-title": "تاريخ من التميز والنزاهة",
     "st-1": "قضية ناجحة",
     "st-2": "سنة خبرة",
+    "st-3": " استشاري خبير",
     "st-4": "سرية تامة",
     "home-p1":
       "تأسس مكتب النخبة للمحاماة ليكون منارة للعدالة في المنطقة، حيث نجمع بين الأصالة القانونية والحلول العصرية المبتكرة.",
@@ -56,7 +57,8 @@ const translations = {
     "area-corporate-d": "دعم قانوني كامل للمستثمرين والشركات الدولية",
     "read-more": "اقرأ المزيد",
     "det-about-t": "عن التخصص",
-    "det-about-d": "نقدم في مكتبنا خدمات دفاع جنائي متميزة...",
+    "det-about-d":
+      "نقدم خدمات دفاع جنائي متميزة لعملائنا، حيث نركز على تقديم استراتيجيات دفاعية مبتكرة وفعالة في قضايا الجنايات والجنح. فريقنا من المحامين ذوي الخبرة العالية يعمل بلا كلل لضمان حقوق موكلينا وتحقيق أفضل النتائج الممكنة في كل قضية.",
     "det-services-t": "تشمل خدماتنا",
     "det-s1": "تمثيل الموكلين في قضايا الجنايات والجنح بمختلف أنواعها.",
     "det-s2": "تقديم الاستشارات القانونية الوقائية لتجنب المساءلة.",
@@ -82,6 +84,7 @@ const translations = {
     "a-title": "History of Excellence & Integrity",
     "st-1": "Successful Cases",
     "st-2": "Years Experience",
+    "st-3": " Expert Consultants",
     "st-4": "Confidentiality",
     "home-p1":
       "Elite Law Firm was founded to be a legal lighthouse in the region, combining legal tradition with modern innovative solutions.",
@@ -123,7 +126,8 @@ const translations = {
       "Full legal support for investors and international firms",
     "read-more": "Read More",
     "det-about-t": "ABOUT PRACTICE",
-    "det-about-d": "We provide distinguished criminal defense services...",
+    "det-about-d":
+      "We provide outstanding criminal defense services to our clients, focusing on delivering innovative and effective defense strategies in felony and misdemeanor cases. Our team of highly experienced lawyers works tirelessly to ensure our clients' rights are protected and to achieve the best possible outcome in every case.",
     "det-services-t": "OUR SERVICES INCLUDE",
     "det-s1": "Representing clients in criminal and misdemeanor cases.",
     "det-s2": "Providing preventive legal advice.",
@@ -240,22 +244,63 @@ function toggleMobileMenu() {
   }
 }
 
+// window.toggleReadMore = function (btn) {
+//   const card = btn.closest(".practice-card");
+//   const details = card.querySelector(".card-details");
+//   const header = card.querySelector(".card-header");
+//   const icon = btn.querySelector("i");
+//   const isExpanded = card.classList.toggle("expanded");
+
+//   if (isExpanded) {
+//     details.style.maxHeight = details.scrollHeight + "px";
+//     details.style.opacity = "1";
+//     header.style.transform = "translateY(-10px)"; // يرفع العنوان لفوق
+//     icon.style.transform = "rotate(180deg)";
+//   } else {
+//     details.style.maxHeight = "0";
+//     details.style.opacity = "0";
+//     header.style.transform = "translateY(0)";
+//     icon.style.transform = "rotate(0deg)";
+//   }
+// };
+
 window.toggleReadMore = function (btn) {
-  const card = btn.closest(".practice-card");
-  const details = card.querySelector(".card-details");
-  const header = card.querySelector(".card-header");
+  // بنحدد الحاوية اللي فيها كل الشغل
+  const container = btn.closest(".flex-col");
+  const title = container.querySelector("h1");
+  const description = container.querySelector("#main-description");
+  const details = container.querySelector(".card-details");
   const icon = btn.querySelector("i");
-  const isExpanded = card.classList.toggle("expanded");
+  const btnText = btn.querySelector(".btn-text");
+
+  // بنشيك لو الكلاس موجود عشان نعرف الحالة (مفتوح ولا مقفول)
+  const isExpanded = container.classList.toggle("expanded-state");
 
   if (isExpanded) {
+    // 1. العنوان يطلع لفوق
+    title.style.transform = "translateY(-20px)";
+    title.style.color = "#b48c36"; // تغيير اللون للذهبي (اختياري للصياعة)
+
+    // 2. الوصف الأساسي يتحرك سنة برضه
+    description.style.transform = "translateY(-10px)";
+
+    // 3. الكلام المخفي يظهر وينزل لتحت
     details.style.maxHeight = details.scrollHeight + "px";
     details.style.opacity = "1";
-    header.style.transform = "translateY(-10px)"; // يرفع العنوان لفوق
-    icon.style.transform = "rotate(180deg)";
+    details.style.marginTop = "1rem";
+
+    // 4. الأيقونة والنص
+    icon.style.transform = "rotate(90deg)";
+    btnText.textContent = currentLang === "ar" ? "عرض أقل" : "Show Less";
   } else {
+    // نرجع كل حاجة زي ما كانت
+    title.style.transform = "translateY(0)";
+    title.style.color = "";
+    description.style.transform = "translateY(0)";
     details.style.maxHeight = "0";
     details.style.opacity = "0";
-    header.style.transform = "translateY(0)";
+    details.style.marginTop = "0";
     icon.style.transform = "rotate(0deg)";
+    btnText.textContent = currentLang === "ar" ? "اقرأ المزيد" : "Read More";
   }
 };
