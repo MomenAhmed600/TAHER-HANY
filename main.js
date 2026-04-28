@@ -48,7 +48,7 @@ const translations = {
     "f-name": "الاسم الكامل",
     "f-email": "البريد الإلكتروني",
     "f-msg": "تفاصيل الاستشارة",
-    "footer-copy": "جميع الحقوق محفوظة لمكتب النخبة للمحاماة © 2024",
+    "footer-copy": "جميع الحقوق محفوظة © 2026 - مؤمن أحمد.",
     "area-criminal-t": "القانون الجنائي",
     "area-click-more": "اضغط لمعرفة التفاصيل والتمثيل القانوني",
     "area-maritime-t": "القانون البحري",
@@ -64,6 +64,18 @@ const translations = {
     "det-s2": "تقديم الاستشارات القانونية الوقائية لتجنب المساءلة.",
     "det-side-t": "هل تحتاج لاستشارة؟",
     "det-back": "لعودة لمجالات الممارسه",
+    "f-brand-desc":
+      "نقدم أفضل الاستشارات القانونية بخبرة تزيد عن 25 عاماً في قلب الإسكندرية.",
+    "f-links-title": "روابط سريعة",
+    "f-follow-title": "تابعنا",
+    "f-location-title": "مواقعنا",
+    "f-location-city": "الإسكندرية",
+    "f-location-area": "192 شارع بورسعيد، سبورتينغ، باب شرق، الإسكندرية، مصر",
+    "f-follow-title-fb": "فيسبوك",
+    "f-follow-title-in": "إنستجرام",
+    "f-follow-title-linkedin": "لينكدإن",
+    "f-follow-title-whatsapp": "واتساب",
+    "f-follow-title-email": "البريد الإلكتروني",
   },
   en: {
     logo: "TAHER & HANY",
@@ -115,7 +127,7 @@ const translations = {
     "f-name": "Full Name",
     "f-email": "Email Address",
     "f-msg": "Consultation Details",
-    "footer-copy": "© 2024 ELITE LAW FIRM. ALL RIGHTS RESERVED.",
+    "footer-copy": "Copy Right © 2026 - All Reserved By Mo'men Ahmed.",
     "area-criminal-t": "Criminal Law",
     "area-click-more": "Click for details and legal representation",
     "area-maritime-t": "Maritime Law",
@@ -133,6 +145,19 @@ const translations = {
     "det-s2": "Providing preventive legal advice.",
     "det-side-t": "Do you need a consultation",
     "det-back": "Returning to the Areas of practice",
+    "f-brand-desc":
+      "Providing top-tier legal consultations with over 25 years of experience in Alexandria.",
+    "f-links-title": "Quick Links",
+    "f-follow-title": "Follow Us",
+    "f-location-title": "Locations",
+    "f-location-city": "ALEXANDRIA",
+    "f-location-area":
+      "192 Port Said Street, Sporting, Bab Sharq, Alexandria, Egypt",
+    "f-follow-title-fb": "Facebook",
+    "f-follow-title-in": "Instagram",
+    "f-follow-title-linkedin": "LinkedIn",
+    "f-follow-title-whatsapp": "WhatsApp",
+    "f-follow-title-email": "Email",
   },
 };
 let currentLang = "ar";
@@ -161,10 +186,16 @@ async function loadPage(pageName) {
   // لو الصفحة خاصة بالتفاصيل، هنروح للفولدر الجديد، لو لا، هنفضل في الفولدر العادي
   let path = `pages/${pageName}.html`;
 
-  const detailPages = ["criminal-law", "maritime-law", "corporate-law"];
+  const detailPagesareas = ["criminal-law", "maritime-law", "corporate-law"];
 
-  if (detailPages.includes(pageName)) {
+  if (detailPagesareas.includes(pageName)) {
     path = `pages/areas-pages-details/${pageName}.html`;
+  }
+
+  const detailPagesservices = ["corporate-law"];
+
+  if (detailPagesservices.includes(pageName)) {
+    path = `pages/services-details/${pageName}.html`;
   }
 
   try {

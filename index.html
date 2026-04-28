@@ -18,27 +18,28 @@
 
   <body class="bg-[#fdfcfb] text-slate-900">
     <nav
-      class="fixed w-full z-[1000] py-4 bg-white border-b-2 border-[#b48c36] shadow-lg"
+      class="fixed w-full z-[1000] py-4 bg-white border-b-2 border-[#001f3f] shadow-lg"
     >
       <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <div class="flex items-center gap-3">
-          <img src="./img/logo.png" alt="Logo" class="h-10 w-auto" />
-          <div class="leading-none">
-            <h1
-              class="text-[#0f172a] text-xl font-extrabold uppercase tracking-tight"
-              data-i18n="logo"
-            >
-              طاهر&هاني
-            </h1>
-            <p
-              class="text-gold text-[9px] uppercase tracking-[0.2em] font-bold mt-1"
-              data-i18n="logo-2"
-            >
-              المكتب القانوني
-            </p>
+        <a href="/" class="flex items-center gap-3">
+          <div class="flex items-center gap-3">
+            <img src="./img/logo.png" alt="Logo" class="h-[60px] w-auto" />
+            <div class="leading-none">
+              <h1
+                class="text-[#0f172a] text-xl font-extrabold uppercase tracking-tight"
+                data-i18n="logo"
+              >
+                طاهر&هاني
+              </h1>
+              <p
+                class="text-gold text-[9px] uppercase tracking-[0.2em] font-bold mt-1"
+                data-i18n="logo-2"
+              >
+                المكتب القانوني
+              </p>
+            </div>
           </div>
-        </div>
-
+        </a>
         <div
           class="hidden lg:flex items-center gap-8 text-xs font-bold uppercase tracking-widest"
         >
@@ -61,7 +62,7 @@
           <button
             onclick="toggleLanguage()"
             id="lang-btn"
-            class="bg-[#b48c36] text-white px-4 py-1 rounded"
+            class="bg-[#001f3f] text-white px-3 py-2 rounded-md text-md font-semibold hover:bg-white hover:text-[#001f3f] border-2 border-[#001f3f] transition-all duration-300"
           >
             English
           </button>
@@ -69,7 +70,7 @@
 
         <button
           onclick="toggleMobileMenu()"
-          class="lg:hidden text-gold text-2xl"
+          class="lg:hidden text-[#001f3f] text-2xl"
         >
           <i class="fas fa-bars-staggered"></i>
         </button>
@@ -145,7 +146,7 @@
             toggleLanguage();
             toggleMobileMenu();
           "
-          class="bg-gold text-white py-2 rounded mt-2"
+          class="bg-[#001f3f] text-white py-2 rounded mt-2"
         >
           English / العربية
         </button>
@@ -154,10 +155,177 @@
 
     <main id="content-area" class="pt-20"></main>
 
-    <footer class="bg-[#0f172a] py-12 text-center text-slate-500 text-[10px]">
-      <p data-i18n="footer-copy">
-        &copy; 2024 ELITE LAW FIRM. ALL RIGHTS RESERVED.
-      </p>
+    <!-- <footer class="bg-[#0f172a] py-8 text-center text-white text-[20px]">
+      <span data-i18n="footer-copy-text"
+        >© Copy Right 2026 - All Reserved By</span
+      >
+
+      <a
+        href="https://www.momenahmed.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-gold font-bold underline cursor-pointer"
+      >
+        Mo'men Ahmed
+      </a>
+    </footer> -->
+
+    <footer
+      class="bg-[#001f3f] text-white shadow-[0_-3px_10px_rgba(0,0,0,0.2)]"
+    >
+      <div
+        class="max-w-7xl mx-auto px-5 pt-10 pb-16 grid grid-cols-2 md:grid-cols-4 gap-10"
+      >
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <img src="./img/logo-foot.png" alt="Logo" class="h-10 w-auto" />
+            <div class="leading-none">
+              <h1
+                class="text-[#fff] text-xl font-extrabold uppercase tracking-tight"
+                data-i18n="logo"
+              >
+                طاهر&هاني
+              </h1>
+              <p
+                class="text-gold text-[9px] uppercase tracking-[0.2em] font-bold mt-1"
+                data-i18n="logo-2"
+              >
+                المكتب القانوني
+              </p>
+            </div>
+          </div>
+          <p class="text-gray-300 md:ml-3" data-i18n="f-brand-desc">
+            Taste the finest coffee, freshly roasted for you.
+          </p>
+        </div>
+
+        <div>
+          <h5 class="text-xl font-semibold mb-4" data-i18n="f-links-title">
+            Quick Links
+          </h5>
+          <ul class="space-y-2">
+            <li>
+              <button onclick="loadPage('areas')" data-i18n="m-Areas">
+                المجالات
+              </button>
+            </li>
+            <li>
+              <button onclick="loadPage('services')" data-i18n="m-services">
+                خدماتنا
+              </button>
+            </li>
+            <li>
+              <button onclick="loadPage('team')" data-i18n="m-team">
+                الفريق
+              </button>
+            </li>
+            <li>
+              <button onclick="loadPage('about')" data-i18n="m-about">
+                من نحن
+              </button>
+            </li>
+            <li>
+              <button onclick="loadPage('contact')" data-i18n="m-contact">
+                اتصل بنا
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="text-xl font-semibold mb-4" data-i18n="f-follow-title">
+            Follow Us
+          </h5>
+          <ul class="space-y-2">
+            <li>
+              <a
+                href="https://www.facebook.com/people/TAHER-HANY-Law-firm/61585816301440/"
+                target="_blank"
+                class="flex items-center gap-2 hover:text-blue-400 transition-colors"
+                data-i18n="f-follow-title-fb"
+              >
+                <span>Facebook</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/blancocafeandplaystion/"
+                target="_blank"
+                class="flex items-center gap-2 hover:text-pink-400 transition-colors"
+                data-i18n="f-follow-title-in"
+              >
+                <span>Instagram</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/mohamed-hany-54b045147/"
+                target="_blank"
+                class="flex items-center gap-2 hover:text-blue-400 transition-colors"
+                data-i18n="f-follow-title-linkedin"
+              >
+                <span>LinkedIn</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://wa.me/201208636227"
+                target="_blank"
+                class="flex items-center gap-2 hover:text-green-500 transition-colors"
+                data-i18n="f-follow-title-whatsapp"
+              >
+                <span>WhatsApp</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="mailto:info@taher-hanylawfirm.com"
+                target="_blank"
+                class="flex items-center gap-2 hover:text-gray-400 transition-colors"
+                data-i18n="f-follow-title-email"
+              >
+                <span>Email</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h5
+            class="text-xl font-semibold mb-4 uppercase"
+            data-i18n="f-location-title"
+          >
+            Alexandria
+          </h5>
+          <ul class="space-y-2">
+            <li>
+              <a
+                class="hover:text-blue-300 transition-colors"
+                data-i18n="f-location-area"
+              >
+                SMOUHA
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div
+        class="bg-black/30 border-t border-white/10 py-4 text-white/80 text-sm"
+      >
+        <div class="flex items-center justify-center gap-2" dir="ltr">
+          <span>© Copy Right 2026 - All Reserved By</span>
+
+          <a
+            href="https://www.momenahmed.net"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-gold font-bold underline cursor-pointer hover:text-white transition-colors"
+          >
+            Mo'men Ahmed
+          </a>
+        </div>
+      </div>
     </footer>
 
     <script src="main.js"></script>
