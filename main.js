@@ -70,12 +70,49 @@ const translations = {
     "f-follow-title": "تابعنا",
     "f-location-title": "مواقعنا",
     "f-location-city": "الإسكندرية",
-    "f-location-area": "192 شارع بورسعيد، سبورتينغ، باب شرق، الإسكندرية، مصر",
+    "f-location-area": "192 شارع بورسعيد، سبورتنج، باب شرق، الإسكندرية، مصر",
     "f-follow-title-fb": "فيسبوك",
     "f-follow-title-in": "إنستجرام",
     "f-follow-title-linkedin": "لينكدإن",
     "f-follow-title-whatsapp": "واتساب",
     "f-follow-title-email": "البريد الإلكتروني",
+    team_title: "فريق العمل",
+    p1_name: "أحمد طاهر",
+    p1_role: "شريك",
+    p2_name: "محمد هاني",
+    p2_role: "شريك",
+    a1_name: "سارة حسن",
+    a2_name: "خالد محمود",
+    a3_name: "ليلى يوسف",
+    a4_name: "ياسين إبراهيم",
+    a5_name: "منى فاروق",
+    a6_name: "عمر كمال",
+    a_role: "محامٍ ",
+    "a_role-senior": "محام رئيسي",
+    val_main_title: "قيمنا وخدماتنا",
+    val1_title: "حماية قانونية",
+    val1_desc:
+      "نوفر درعاً قانونياً قوياً لمصالحك التجارية والشخصية ضد كافة المخاطر.",
+    val2_title: "استجابة سريعة",
+    val2_desc:
+      "ندرك أهمية الوقت في القانون، لذلك نضمن الرد والتحرك الفوري لقضاياكم.",
+    val3_title: "فريق متخصص",
+    val3_desc:
+      "نخبة من المحامين المتخصصين في مختلف فروع القانون لضمان أفضل النتائج.",
+    val4_title: "نزاهة مطلقة",
+    val4_desc:
+      "نعمل بشفافية تامة مع موكلينا ونلتزم بأعلى معايير أخلاقيات المهنة.",
+    val5_title: "دعم لغوي",
+    val5_desc:
+      "نقدم خدماتنا باللغتين العربية والإنجليزية لخدمة الأفراد والشركات الدولية.",
+    val6_title: "حلول مخصصة",
+    val6_desc:
+      "كل قضية لها طبيعتها الخاصة، لذا نصمم استراتيجيتنا لتناسب احتياجاتك بدقة.",
+    about_title: "من نحن",
+    about_intro_quote:
+      "نحن فريق من المحامين المتخصصين في مختلف فروع القانون، ونعمل بجدية لضمان أفضل النتائج لموكلينا.",
+    about_p1:
+      "مع أكثر من 25 عاماً من الخبرة في الإسكندرية، أصبح مكتبنا اسماً رائداً في صناعة القانون في المنطقة.  نحن نفخر بتاريخنا الحافل بالنجاحات والتزامنا الثابت بتقديم خدمات قانونية عالية الجودة لعملائنا في جميع أنحاء مصر وخارجها.",
   },
   en: {
     logo: "TAHER & HANY",
@@ -158,36 +195,53 @@ const translations = {
     "f-follow-title-linkedin": "LinkedIn",
     "f-follow-title-whatsapp": "WhatsApp",
     "f-follow-title-email": "Email",
+    team_title: "Our Team",
+    p1_name: "Ahmed Taher",
+    p1_role: "Partner",
+    p2_name: "Mohamed Hany",
+    p2_role: "Partner",
+    a1_name: "Sara Hassan",
+    a2_name: "Khaled Mahmoud",
+    a3_name: "Layla Youssef",
+    a4_name: "Yassin Ibrahim",
+    a5_name: "Mona Farouk",
+    a6_name: "Omar Kamal",
+    a_role: "Associate",
+    "a_role-senior": "Senior Associate",
+    val_main_title: "Our Values & Services",
+    val1_title: "Legal Protection",
+    val1_desc:
+      "We provide a strong legal shield for your commercial and personal interests.",
+    val2_title: "Fast Response",
+    val2_desc:
+      "We understand the value of time, guaranteeing immediate legal action.",
+    val3_title: "Specialized Team",
+    val3_desc:
+      "Expert lawyers specialized in various legal branches for best results.",
+    val4_title: "Absolute Integrity",
+    val4_desc:
+      "We operate with total transparency and commit to the highest ethical standards.",
+    val5_title: "Bilingual Support",
+    val5_desc:
+      "We provide services in Arabic and English for local and international clients.",
+    val6_title: "Tailored Solutions",
+    val6_desc:
+      "Each case is unique; we design strategies that fit your specific needs.",
+    about_title: "About Us",
+    about_intro_quote:
+      "We are a team of lawyers specializing in various branches of law, working diligently to ensure the best outcomes for our clients.",
+    about_p1:
+      "With over 25 years of experience in Alexandria, our firm has established itself as a leading name in the legal industry.",
   },
 };
 let currentLang = "ar";
 
-// async function loadPage(pageName) {
-//   const contentArea = document.getElementById("content-area");
-//   try {
-//     const response = await fetch(`pages/${pageName}.html`);
-//     if (!response.ok) throw new Error("Page not found");
-//     const html = await response.text();
-//     contentArea.innerHTML = html;
-
-//     applyTranslations();
-//     window.scrollTo({ top: 0, behavior: "smooth" });
-//   } catch (error) {
-//     contentArea.innerHTML =
-//       "<p class='text-center py-20'>حدث خطأ في تحميل الصفحة.</p>";
-//   }
-// }
-
-// دالة تحميل الصفحات ديناميكياً
+// rout-pages
 async function loadPage(pageName) {
   const contentArea = document.getElementById("content-area");
-
-  // نحدد المسار بناءً على اسم الصفحة
-  // لو الصفحة خاصة بالتفاصيل، هنروح للفولدر الجديد، لو لا، هنفضل في الفولدر العادي
   let path = `pages/${pageName}.html`;
 
   const detailPagesareas = ["criminal-law", "maritime-law", "corporate-law"];
-
   if (detailPagesareas.includes(pageName)) {
     path = `pages/areas-pages-details/${pageName}.html`;
   }
@@ -206,11 +260,56 @@ async function loadPage(pageName) {
 
     applyTranslations();
     window.scrollTo({ top: 0, behavior: "smooth" });
+
+    location.hash = pageName;
   } catch (error) {
-    contentArea.innerHTML =
-      "<p class='text-center py-20'>حدث خطأ في تحميل الصفحة.</p>";
+    contentArea.innerHTML = "<p class='text-center py-20'>حدث خطأ.</p>";
   }
 }
+
+window.addEventListener("hashchange", () => {
+  const page = location.hash.replace("#", "") || "home";
+  loadPage(page);
+});
+
+// when the page louds we want to load the page based on the hash in the URL, if there is no hash we will load the home page by default
+window.onload = () => {
+  const page = location.hash.replace("#", "") || "home";
+  loadPage(page);
+};
+
+// async function loadPage(pageName) {
+//   const contentArea = document.getElementById("content-area");
+
+//   // نحدد المسار بناءً على اسم الصفحة
+//   // لو الصفحة خاصة بالتفاصيل، هنروح للفولدر الجديد، لو لا، هنفضل في الفولدر العادي
+//   let path = `pages/${pageName}.html`;
+
+//   const detailPagesareas = ["criminal-law", "maritime-law", "corporate-law"];
+
+//   if (detailPagesareas.includes(pageName)) {
+//     path = `pages/areas-pages-details/${pageName}.html`;
+//   }
+
+//   const detailPagesservices = ["corporate-law"];
+
+//   if (detailPagesservices.includes(pageName)) {
+//     path = `pages/services-details/${pageName}.html`;
+//   }
+
+//   try {
+//     const response = await fetch(path);
+//     if (!response.ok) throw new Error("Page not found");
+//     const html = await response.text();
+//     contentArea.innerHTML = html;
+
+//     applyTranslations();
+//     window.scrollTo({ top: 0, behavior: "smooth" });
+//   } catch (error) {
+//     contentArea.innerHTML =
+//       "<p class='text-center py-20'>حدث خطأ في تحميل الصفحة.</p>";
+//   }
+// }
 
 function toggleLanguage() {
   currentLang = currentLang === "ar" ? "en" : "ar";
